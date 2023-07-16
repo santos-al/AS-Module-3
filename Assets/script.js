@@ -9,13 +9,14 @@ function generatePassword() {
     charLength = window.prompt("Try again, please select a number between 8 and 128");
   }
   // Question for uppercase in password
-  let uppercase = window.confirm("Do you want uppercase letters in your password");
+  let uppercase = window.confirm("Do you want uppercase letters in your password?");
   // Question for lowercase in password
-  let lowercase = window.confirm("Do you want lowercase letters in your password");
+  let lowercase = window.confirm("Do you want lowercase letters in your password?");
   // check if at least uppercase or lowercase is slected or else loop back
-  while (uppercase || lowercase) {
-    uppercase = window.confirm("Do you want uppercase letters in your password");
-    lowercase = window.confirm("Do you want lowercase letters in your password");
+  while (uppercase === false && lowercase === false) {
+    window.alert("At least either uppercase or lower case must be selected, choose again.")
+    uppercase = window.confirm("Do you want uppercase letters in your password?");
+    lowercase = window.confirm("Do you want lowercase letters in your password?");
   }
   return `lowercase is ${lowercase} and uppercase is ${uppercase}`;
 }
