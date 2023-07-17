@@ -38,7 +38,7 @@ function generatePassword() {
     specialCharCheck = window.confirm("Do you want special characters in your password?");
   }
 
-  // Checks which criteria weren't selected and removes them from "allOptions"
+  // Checks which criteria were selected and adds them from "allOptions"
   if (uppercaseCheck === true) {
     allOptions += uppercase;
   }
