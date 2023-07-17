@@ -1,11 +1,4 @@
 // Assignment Code
-testArray = ["6", "7", "8", "9"]; 
-// legnth = 4
-console.log(testArray.length);
-console.log(testArray);
-testArray.splice("7");
-console.log(testArray);
-
 function generatePassword() {
 
   // Password options
