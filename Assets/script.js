@@ -16,16 +16,6 @@ function generatePassword() {
   let allOptions = ""
   password = ""
 
-
-  // sets all default criteria to false
-  let uppercaseCheck = false;
-  let lowercaseCheck = false;
-  let numericCheck = false;
-  let specialCharCheck = false;
-
-
-
-
   // character length check for password
   let charLength = Number(window.prompt("Select the number of character (must be between 8 and 128)"));
 
@@ -35,16 +25,16 @@ function generatePassword() {
   // Make sure charLength is a number
 
   // Question for uppercase in password
-  uppercaseCheck = window.confirm("Do you want uppercase letters in your password?");
+  let uppercaseCheck = window.confirm("Do you want uppercase letters in your password?");
 
   // Question for lowercase in password
-  lowercaseCheck = window.confirm("Do you want lowercase letters in your password?");
+  let lowercaseCheck = window.confirm("Do you want lowercase letters in your password?");
 
   // Check for numbers in the password
-  numericCheck = window.confirm("Do you want numbers in your password?");
+  let numericCheck = window.confirm("Do you want numbers in your password?");
 
   // Check for special characters in the password
-  specialCharCheck = window.confirm("Do you want special characters in your password?");
+  let specialCharCheck = window.confirm("Do you want special characters in your password?");
 
   // check if at least uppercase or lowercase is selected or else loop back
   while (uppercaseCheck === false && lowercaseCheck === false && numericCheck === false && specialCharCheck === false) {
@@ -69,6 +59,7 @@ function generatePassword() {
     allOptions += specialChar;
   }
 
+  // Takes all the possible options to create the password and adds them to "password". This repeats until the "charLength is equal to 0"
   for (i = charLength; i > 0 ; i--) {
    password += allOptions[Math.floor(Math.random() * (allOptions.length - 1))];
   }
